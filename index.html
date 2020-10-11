@@ -8,7 +8,11 @@
     <h1>Head to the console for a riveting game of rock paper scissors</h1>
 
     <script>
-        console.log("we are connected!")
+        function computerPlay() {
+            let options = ["Rock","Paper","Scissors"]
+            let randomChoice = Math.floor(Math.random()*3)
+            return options[randomChoice]
+        }
     </script>
 </body>
 </html>
