@@ -19,12 +19,33 @@
             comptuerSelectionCapitalised = comptuerSelection.toUpperCase()
             let options = ["ROCK","PAPER","SCISSORS"]
             if(options.indexOf(playerSelectionCapitalised) == (options.indexOf(comptuerSelectionCapitalised) + 1) % 3 ){
-                return "You win " + playerSelection + " beats " + comptuerSelection
+                return playerSelection
             } else if (
                 options.indexOf(comptuerSelectionCapitalised) == (options.indexOf(playerSelectionCapitalised) + 1) % 3 
             ) {
-                return "You lose " + comptuerSelection + " beats " + playerSelection
+                return comptuerSelection
+            } return
+        }
+
+        function game() {
+            let playerScore = 0
+            let computerScore = 0
+            for(let i = 0; i <= 5; i++){
+                let playerSelection = prompt("Pick Rock, Paper, Scissors")
+                let comptuerSelection = computerPlay()
+                let winner = calcWinner(playerSelection, comptuerSelection)
+                if (winner == playerSelection){
+                    playerScore += 1
+                    console.log("Computer chose " + comptuerSelection + " you win this round")
+                } else if (winner ==  comptuerSelection){
+                    computerScore += 1
+                    console.log("Computer chose " + comptuerSelection + " you lose this round")
+                } else console.log("Computer chose " + comptuerSelection + " this round is a tie")
             }
+            return("The final score is " + "\n" +
+                "Computer Score: " + computerScore + "\n" +
+                "Your Score: " + playerScore + "\n"
+            )
         }
     </script>
 </body>
