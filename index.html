@@ -14,10 +14,17 @@
             return options[randomChoice]
         }
 
-        function singleRound(playerSelection,comptuerSelection) {
-            playerSelection = playerSelection.toUpperCase()
-            comptuerSelection = comptuerSelection.toUpperCase()
-            return playerSelection
+        function calcWinner(playerSelection,comptuerSelection) {
+            playerSelectionCapitalised = playerSelection.toUpperCase()
+            comptuerSelectionCapitalised = comptuerSelection.toUpperCase()
+            let options = ["ROCK","PAPER","SCISSORS"]
+            if(options.indexOf(playerSelectionCapitalised) == (options.indexOf(comptuerSelectionCapitalised) + 1) % 3 ){
+                return "You win " + playerSelection + " beats " + comptuerSelection
+            } else if (
+                options.indexOf(comptuerSelectionCapitalised) == (options.indexOf(playerSelectionCapitalised) + 1) % 3 
+            ) {
+                return "You lose " + comptuerSelection + " beats " + playerSelection
+            }
         }
     </script>
 </body>
